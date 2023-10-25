@@ -17,22 +17,22 @@ namespace WindowsFormsApp1
 
         private void btnCreat_Click(object sender, EventArgs e)
         {
-            //string newName = txtCreat.Text;
+            string newName = txtCreat.Text;
 
-            //using (SqlConnection connection = new SqlConnection(connectionString))
-            //{
-            //    connection.Open();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
 
-            //    string insertQuery = "INSERT INTO Table1 (Name) VALUES (@Name)";
+                string insertQuery = "INSERT INTO Table1 (Name) VALUES (@Name)";
 
-            //    using (SqlCommand cmd = new SqlCommand(insertQuery, connection))
-            //    {
-            //        cmd.Parameters.Add(new SqlParameter("@Name", SqlDbType.NVarChar, 255));
-            //        cmd.Parameters["@Name"].Value = newName;
+                using (SqlCommand cmd = new SqlCommand(insertQuery, connection))
+                {
+                    cmd.Parameters.Add(new SqlParameter("@Name", SqlDbType.NVarChar, 255));
+                    cmd.Parameters["@Name"].Value = newName;
 
-                    
-            //    }
-            //}
+
+                }
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
